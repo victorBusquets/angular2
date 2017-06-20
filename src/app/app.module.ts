@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { APP_ROUTING } from './app.routes';
 
 //Services
+import { HeroesService } from './services/Heroes.service';
 
 //Components
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HeroeDetailComponent } from './components/heroe-detail/heroe-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     HomeComponent,
     HeroesComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeroeDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     HttpModule,
     APP_ROUTING
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    HeroesService
+  ],
+  bootstrap: [
+    AppComponent
+   ]
 })
 export class AppModule { }
