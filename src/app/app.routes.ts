@@ -5,11 +5,13 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeroeDetailComponent } from './components/heroe-detail/heroe-detail.component';
+import { HeroesFilteredComponent } from './components/heroes-filtered/heroes-filtered.component';
 
 const APP_ROUTES:Routes = [
 	{ path: 'home', component: HomeComponent },
 	{ path: 'heroes', component: HeroesComponent },
 	{ path: 'heroe/:id', component: HeroeDetailComponent },
+	{ path: 'heroes-filtered/:key/:value', component: HeroesFilteredComponent },
 	{ path: 'about', component: AboutComponent },
     { path: '**', component: NotFoundComponent }
 ];

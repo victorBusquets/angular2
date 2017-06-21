@@ -64,6 +64,21 @@ export class HeroesService {
 	getHeroe( index:number ){
 		return this.heroes[index];
 	}
+
+	getFilteredHeroes( filter:FilterHeroe ){
+		let { key, value } = filter;
+
+		return this.heroes.filter(function (heroe) {
+			var heroeValue:string = heroe[key] && heroe[key].toLowerCase();
+
+			return heroeValue.indexOf( value.toLowerCase() ) >= 0;
+		});
+	}
+}
+
+export interface FilterHeroe{
+	key:string;
+	value:string;
 }
 
 export interface Heroe{
@@ -72,4 +87,4 @@ export interface Heroe{
 	img:string;
 	aparition:string;
 	company:string;
-};
+}
